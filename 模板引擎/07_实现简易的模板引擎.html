@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <!-- <script src="template-web.js"></script> -->
+	</head>
+	<body>
+        <div id="user-box"></div>
+		<script type="text/html" id="tpl-user">
+			<div>姓名: {{name }}</div>
+			<div>年龄: {{ age}}</div>
+			<div>性别: {{ gender}}</div>
+			<div>身高: {{ height}}</div>
+			<div>体重: {{long }}</div>
+		</script>
+		<script>
+			// 定义数据
+			var data = {
+				name: "老赵",
+				age: 15,
+				gender: "男",
+				height: "170cm",
+				long: "60kg",
+			};
+            // 调用模板
+            var htmlStr = template('tpl-user',data)
+            function template(id,data){
+                var str = document.getElementById(id).innerHTML
+                var patten = /{{\s*([a-zA-Z]+)\s*}}/
+                var pattenResult = null
+                while(pattenResult = patten.exec(str)){
+                    str = str.replace(pattenResult[0],data[pattenResult[1]])
+                }
+                return str
+            }
+            // 渲染html 结构
+            document.getElementById('user-box').innerHTML = htmlStr
+		</script>
+	</body>
+</html>

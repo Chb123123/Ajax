@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <script>
+        // $.ajax() 发起的 get 请求
+        $.ajax({
+            type: 'get',
+            url: 'http://www.liulongbin.top:3006/api/getbooks',
+            // data: 1,
+            success: function(res){
+                console.log(res)
+            }
+        })
+        // ajax() 发起的post 请求
+        // $.ajax({
+        //     type: 'post',
+        //     url: 'http://www.liulongbin.top:3006/api/addbook',
+        //     data: {
+        //         bookname: '别卷了早点睡吧',
+        //         author: '躺床上不香吗',
+        //         publisher: '晚安,以骨比骨'
+        //     },
+        //     success: function(res){
+        //         console.log(res)
+        //     }
+        // })
+    </script>
+</body>
+</html>

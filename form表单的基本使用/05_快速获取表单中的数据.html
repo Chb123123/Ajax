@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="js/jQuery.js"></script>
+	</head>
+	<body>
+		<form action="/login" method="POST" role="form" id="form1">
+			<legend>登入</legend>
+
+			<div class="form-group">
+				<label for="">用户名</label>
+				<input
+					type="text"
+					class="form-control"
+					id=""
+					name="u-name"
+					placeholder="输入用户名"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="">密码</label>
+				<input
+					type="password"
+					class="form-control"
+					id=""
+					name="password"
+					placeholder="输入密码"
+				/>
+			</div>
+
+			<button type="submit" class="btn btn-primary">登入</button>
+		</form>
+		<script>
+			// serialize() 获取表单中的数据
+			$(function () {
+				// 阻止表单的默认行为 (跳转) event.preventDefault()
+				$("#form1").on("submit", function (e) {
+					// alert("监听到表单提交");
+                    e.preventDefault()
+					
+				});
+			});
+		</script>
+	</body>
+</html>

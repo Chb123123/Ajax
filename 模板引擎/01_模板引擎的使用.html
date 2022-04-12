@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="jQuery.js"></script>
+		<script src="template-web.js"></script>
+	</head>
+	<body>
+		<div class="container"></div>
+		<!-- 定义模板 -->
+		<script type="text/html" id="uname">
+			<!-- 双括号代表占位符 -->
+			<h1>{{name}} --------------- {{age}}</h1>
+			<!-- 原文输出 -->
+			{{@text}}
+			<!-- 按需输出 -->
+			<div>
+				{{if flag == 0}} flag的值是0 {{else if flag == 1}} flag的值是1 {{/if}}
+			</div>
+			<!-- 循环输出 -->
+			<ul>
+				{{each hobby}}
+				<li>索引是{{$index}},爱好是{{$value}}</li>
+				{{/each}}
+			</ul>
+			<!-- 定义过滤器 -->
+			<div>注册的时间：{{regTime | dateFormat}}</div>
+		</script>
+		<script>
+			// 定义一个过滤器
+			// template.defaults.imports.dateFormat = function (date) {
+			// 	var y = date.getFullYear();
+			// 	var m = date.getMonth() + 1;
+			// 	var d = date.getDate();
+
+			// 	return y + "-" + m + "-" + d;
+			// };
+			template.defaults.imports.dateFormat = function (date) {
+				var y = date.getYear();
+				var m = date.getMonth() + 1;
+				var d = date.getDate();
+				return y + "-" + m + "-" + d;
+			};
+			// 定义需要渲染的数据
+			var data = {
+				name: "张三",
+				age: 18,
+				text: "<h3>原文输出</h3>",
+				flag: 0,
+				hobby: ["打篮球", "跳高", "跳远", "踢足球"],
+				regTime: new Date(),
+			};
+			// 调用 tmmplate 函数
+			var html = template("uname", data);
+			console.log(html);
+			$(".container").html(html);
+		</script>
+	</body>
+</html>
