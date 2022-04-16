@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="jQuery.js"></script>
 </head>
 <body>
+    <div class="time">
+        当前还有：<span class="num">0</span>%完成
+    </div>
     <script>
         var str = '<div>今天{{date}},天气{{sun}},我的名字是{{name}},我的年纪{{age}}</div>'
         var patten = /{{\s*([a-zA-Z]+)\s*}}/
@@ -16,6 +20,16 @@
             str = str.replace(pattenrn[0],data[pattenrn[1]])
         }
         console.log(str)
+    </script>
+    <script>
+        var num = 0
+        var times = setInterval(function(){
+            num++
+            $('.num').text(num)
+            if(num >= 100){
+                clearInterval(times)
+            }
+        },100)
     </script>
 </body>
 </html>

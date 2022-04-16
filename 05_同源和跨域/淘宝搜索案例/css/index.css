@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+input{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.logo{
+    margin: 100px auto 100px;
+    width: 260px;
+    height: 70px;
+    /* border: 1px solid red; */
+}
+.logo > img{
+    width: 100%;
+    height: 100%;
+}
+.input-container{
+    position: relative;
+    width: 600px;
+    height: 40px;
+    margin: auto;
+    /* border: 1px solid red; */
+
+}
+.baby{
+    position: absolute;
+    top: -25px;
+    font-size: 14px;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background-color: #F85800;
+    color: white;
+    cursor: pointer;
+}
+.shop{
+    position: absolute;
+    top: -25px;
+    left: 50px;
+    font-size: 14px;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    /* background-color: #F85800; */
+    color: #666;
+    cursor: pointer;
+}
+input[type=text]{
+    display: block;
+    float: left;
+    height: 100%;
+    width: 500px;
+    border: 2px solid #F85800;
+    box-sizing: border-box;
+    /* vertical-align: bottom; */
+    padding-left: 10px;
+
+}
+#btn{
+    display: block;
+    float: left;
+    width: 100px;
+    height: 100%;
+    background-color: #F85800;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* 下来菜单模块 */
+.menu{
+    width: 600px;
+    margin: auto;
+    margin-top: 5px;
+}
+.menu> li{
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(0,0,0,.1);
+    margin-bottom: 2px;
+    padding-left: 10px;
+    cursor: pointer;
+    color: #444;
+}
+.menu> li:hover{
+    background-color: #F85800;
+    color: white;
+}

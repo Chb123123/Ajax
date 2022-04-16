@@ -1,0 +1,1 @@
+success({name: '赵三',age: 12})

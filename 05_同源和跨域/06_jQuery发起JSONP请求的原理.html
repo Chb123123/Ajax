@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.js"></script>
+</head>
+<body>
+    <button id="btn">发起JSONP请求</button>
+    <script>
+        // 发起JSONP 请求时 动态生成一个 script 标签
+        // 在请求结束时在删除生成的script 标签
+        $('#btn').on('click',function(){
+            $.ajax({
+                url: 'http://www.liulongbin.top:3006/api/jsonp?name=za&age=16',
+                dataType: 'jsonp',
+                jsonpCallback: 'ABC',
+                success: function(res){
+                    console.log(res)
+                }
+            })
+        })
+    </script>
+</body>
+</html>

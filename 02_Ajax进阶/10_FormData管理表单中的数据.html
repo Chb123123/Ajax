@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 新建一个 FormDate对象
+        var fd = new FormData()
+        // 为 FormData 添加表单项
+        fd.append('uname','张三')
+        fd.append('upwd','123456')
+        // 创建 xhr 对象
+        var xhr = new XMLHttpRequest()
+        // 指定请求类型
+        xhr.open('post','http://www.liulongbin.top:3006/api/formdata')
+        // 直接提交
+        xhr.send(fd)
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText)
+            }
+        }
+    </script>
+</body>
+</html>

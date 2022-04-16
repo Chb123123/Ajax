@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.js"></script>
+</head>
+<body>
+    <script>
+        $.ajax({
+            url: 'http://www.liulongbin.top:3006/api/jsonp?name=张三&age=12',
+            // 发起 JSONP 请求
+            dataType: 'jsonp',
+            // 自定义
+            jsonp: 'ck',
+            // 自定义回调函数的名称
+            jsonpCallback: 'abc',
+            success: function(res){
+                console.log(res)
+            }
+        })
+    </script>
+</body>
+</html>
